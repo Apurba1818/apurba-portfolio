@@ -20,7 +20,7 @@ const Contact = () => {
 
     try {
       // Ensure VITE_API_URL is set in your .env (e.g., http://localhost:5000)
-      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const baseUrl = import.meta.env.VITE_API_URL;
       
       const response = await fetch(`${baseUrl}/api/contact`, {
         method: 'POST',
