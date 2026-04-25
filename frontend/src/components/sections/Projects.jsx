@@ -26,8 +26,8 @@ const DATA = {
       image: '/webbuilder.png', 
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
       features: ['Real-time live preview tab', 'Live code editing via Monaco Editor', 'Per-user search history powered by Clerk Auth'],
-      github: 'https://github.com/your-username/webbuilder-ai',
-      live: 'https://your-webbuilder-ai.vercel.app', // <-- Replace with your live URL
+      github: 'https://github.com/Apurba1818/web-builder',
+      live: 'https://web-builder-navy.vercel.app/', // <-- Replace with your live URL
       color: 'from-purple-500/20 to-indigo-500/20'
     },
     {
@@ -36,8 +36,8 @@ const DATA = {
       image: '/vms.png', 
       tech: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
       features: ['Real-time analytics dashboard', 'Daily income and expense logging', 'Secure user authentication system'],
-      github: 'https://github.com/your-username/vms',
-      live: 'https://your-vms-project.vercel.app', // <-- Replace with your live URL
+      github: 'https://github.com/Apurba1818/vehicle-management-system',
+      live: 'https://vehicle-management-system-ten.vercel.app/', // <-- Replace with your live URL
       color: 'from-blue-500/20 to-cyan-500/20'
     }
   ]
