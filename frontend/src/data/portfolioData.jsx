@@ -37,7 +37,7 @@ export const DATA = {
   {
     title: "Build & Deploy Apps with Google AI Studio",
     issuer: "GUVI",
-    date: "2024",
+    date: "2026",
     link: "https://www.guvi.in/share-certificate/79101if7o29T70dI6e",
     file: "/cert-guvi.jpeg",   
     tags: ["Google AI Studio", "Generative AI", "LLM"],
@@ -47,7 +47,7 @@ export const DATA = {
   {
     title: "IBM AI Foundations",
     issuer: "IBM",
-    date: "2024",
+    date: "2026",
     link: "https://skills.yourlearning.ibm.com/certificate/share/14da3e90adewogICJvYmplY3RJZCIgOiAiUExBTi03OTEzRUUxREIwMzAiLAogICJsZWFybmVyQ05VTSIgOiAiNzY2MzYyOVJFRyIsCiAgIm9iamVjdFR5cGUiIDogIkFDVElWSVRZIgp95cb2db197c-10",
     file: "/cert-ibm.jpg",    
     tags: ["AI Ethics", "Machine Learning", "Foundations"],
