@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, ExternalLink, Calendar, ShieldCheck } from 'lucide-react';
+import { Award, ExternalLink, Calendar, ShieldCheck, Eye } from 'lucide-react';
 import { DATA } from '../../data/portfolioData';
 import SectionHeading from '../ui/SectionHeading';
 
@@ -73,15 +73,36 @@ const Certificates = () => {
                   </div>
                 </div>
 
-                <motion.a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full py-4 px-6 bg-white/5 group-hover:bg-cyan-500 border border-white/10 group-hover:border-transparent rounded-2xl text-zinc-300 group-hover:text-zinc-950 font-bold flex items-center justify-center gap-3 transition-all duration-300"
-                >
-                  Verify Credential
-                  <ExternalLink size={18} />
-                </motion.a>
+                {/* ── Two buttons side by side ── */}
+                <div className="flex gap-3">
+
+                  {/* View button — opens local file */}
+                  <motion.a
+                    href={cert.file}
+                    target="_blank"
+                    rel="noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex-1 py-4 px-4 bg-white/5 hover:bg-violet-500/20 border border-white/10 hover:border-violet-500/50 rounded-2xl text-zinc-300 hover:text-violet-300 font-bold flex items-center justify-center gap-2 transition-all duration-300"
+                  >
+                    <Eye size={17} />
+                    View
+                  </motion.a>
+
+                  {/* Verify button — opens external verify link */}
+                  <motion.a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex-1 py-4 px-4 bg-white/5 group-hover:bg-cyan-500 border border-white/10 group-hover:border-transparent rounded-2xl text-zinc-300 group-hover:text-zinc-950 font-bold flex items-center justify-center gap-2 transition-all duration-300"
+                  >
+                    <ShieldCheck size={17} />
+                    Verify
+                  </motion.a>
+
+                </div>
               </div>
             </motion.div>
           ))}
