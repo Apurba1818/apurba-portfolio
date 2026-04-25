@@ -49,7 +49,7 @@ export const DATA = {
     issuer: "IBM",
     date: "2024",
     link: "https://skills.yourlearning.ibm.com/certificate/share/14da3e90adewogICJvYmplY3RJZCIgOiAiUExBTi03OTEzRUUxREIwMzAiLAogICJsZWFybmVyQ05VTSIgOiAiNzY2MzYyOVJFRyIsCiAgIm9iamVjdFR5cGUiIDogIkFDVElWSVRZIgp95cb2db197c-10",
-    file: "/cert-ibm.jpg",    
+    file: "/cert-ibm.jpeg",    
     tags: ["AI Ethics", "Machine Learning", "Foundations"],
     icon: "🧠",
     color: "from-indigo-500/20 to-violet-500/20"
