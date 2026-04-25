@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring, animate } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { ChevronRight, Mail, ArrowDown } from 'lucide-react';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { ChevronRight, Mail, Github, Linkedin, ArrowDown } from 'lucide-react';
 import { DATA } from '../../data/portfolioData';
 import { staggerContainer, fadeInUp } from '../../utils/animations';
 
@@ -9,7 +8,7 @@ import { staggerContainer, fadeInUp } from '../../utils/animations';
 const ROLES = ['MERN Stack Developer', 'Full Stack Engineer', 'React Specialist', 'Node.js Developer'];
 
 const Typewriter = () => {
-  const [roleIdx,   setRoleIdx]   = useState(0);
+  const [roleIdx, setRoleIdx]   = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [deleting,  setDeleting]  = useState(false);
   const [pause,     setPause]     = useState(false);
@@ -51,14 +50,7 @@ const TECHS = ['React', 'Node', 'MongoDB', 'Express', 'JS', 'Tailwind', 'Git', '
 const OrbitRing = ({ radius, duration, techs, clockwise = true }) => (
   <motion.div
     className="absolute rounded-full border border-white/5"
-    style={{
-      width: radius * 2,
-      height: radius * 2,
-      top: '50%',
-      left: '50%',
-      marginTop: -radius,
-      marginLeft: -radius,
-    }}
+    style={{ width: radius * 2, height: radius * 2, top: '50%', left: '50%', marginTop: -radius, marginLeft: -radius }}
     animate={{ rotate: clockwise ? 360 : -360 }}
     transition={{ duration, repeat: Infinity, ease: 'linear' }}
   >
@@ -131,10 +123,7 @@ const Hero = () => {
   const imgRotateX = useTransform(smoothY, [-300, 300], [8, -8]);
   const imgRotateY = useTransform(smoothX, [-300, 300], [-8, 8]);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
   const heroOpacity  = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
   const heroY        = useTransform(scrollYProgress, [0, 0.6], [0, -60]);
   const photoOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
@@ -155,7 +144,7 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden"
     >
 
-      {/* Always-drifting gradient blobs */}
+      {/* ── always-drifting gradient blobs behind everything ── */}
       <motion.div
         animate={{ x: [0, 60, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
         transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
@@ -169,7 +158,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
 
-        {/* ══ LEFT — text ══ */}
+        {/* ══════════════ LEFT — text ══════════════ */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -179,8 +168,7 @@ const Hero = () => {
         >
 
           {/* Badge */}
-          <motion.div
-            variants={fadeInUp}
+          <motion.div variants={fadeInUp}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md"
           >
             <motion.span
@@ -188,16 +176,11 @@ const Hero = () => {
               transition={{ duration: 1.6, repeat: Infinity }}
               className="w-2 h-2 rounded-full bg-cyan-400 block"
             />
-            <span className="text-sm text-zinc-300 font-mono tracking-wide">
-              Available for new opportunities
-            </span>
+            <span className="text-sm text-zinc-300 font-mono tracking-wide">Available for new opportunities</span>
           </motion.div>
 
           {/* Greeting */}
-          <motion.p
-            variants={fadeInUp}
-            className="text-cyan-400/80 font-mono mb-3 text-base tracking-widest uppercase"
-          >
+          <motion.p variants={fadeInUp} className="text-cyan-400/80 font-mono mb-3 text-base tracking-widest uppercase">
             Hi there, I'm
           </motion.p>
 
@@ -231,10 +214,7 @@ const Hero = () => {
           </motion.h1>
 
           {/* Typewriter role */}
-          <motion.div
-            variants={fadeInUp}
-            className="text-xl md:text-2xl font-semibold mb-6 h-8"
-          >
+          <motion.div variants={fadeInUp} className="text-xl md:text-2xl font-semibold mb-6 h-8">
             <Typewriter />
           </motion.div>
 
@@ -243,17 +223,13 @@ const Hero = () => {
             variants={fadeInUp}
             className="text-zinc-400 text-base md:text-lg mb-10 leading-relaxed max-w-xl"
           >
-            I am a{' '}
-            <span className="text-cyan-400 font-medium">MERN Stack Developer</span>{' '}
+            I am a <span className="text-cyan-400 font-medium">MERN Stack Developer</span>{' '}
             specializing in building exceptional digital experiences. Currently focused on
             building accessible, human-centered, full-stack applications.
           </motion.p>
 
           {/* CTA buttons */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 mb-12"
-          >
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-12">
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -267,10 +243,7 @@ const Hero = () => {
               />
               <span className="relative z-10 flex items-center gap-2">
                 View Projects
-                <ChevronRight
-                  className="group-hover:translate-x-1 transition-transform"
-                  size={20}
-                />
+                <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </span>
             </motion.a>
 
@@ -285,15 +258,12 @@ const Hero = () => {
           </motion.div>
 
           {/* Social links */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex items-center gap-6 mb-12"
-          >
+          <motion.div variants={fadeInUp} className="flex items-center gap-6 mb-12">
             <span className="text-zinc-600 text-xs font-mono tracking-widest">FIND ME ON</span>
             <div className="h-px w-8 bg-zinc-700" />
             {[
-              { icon: <FiGithub size={20} />,   href: DATA.socials.github,   label: 'GitHub'   },
-              { icon: <FiLinkedin size={20} />, href: DATA.socials.linkedin, label: 'LinkedIn' },
+              { icon: <Github size={20} />, href: DATA.socials.github,   label: 'GitHub'   },
+              { icon: <Linkedin size={20} />, href: DATA.socials.linkedin, label: 'LinkedIn' },
             ].map((s) => (
               <motion.a
                 key={s.label}
@@ -313,15 +283,15 @@ const Hero = () => {
             variants={fadeInUp}
             className="flex items-center gap-8 px-6 py-4 rounded-2xl bg-white/3 border border-white/8 backdrop-blur-sm"
           >
-            <StatCard value={2} label="Projects Built" delay={0.8} />
+            <StatCard value={2}  label="Projects Built"   delay={0.8} />
             <div className="w-px h-8 bg-white/10" />
-            <StatCard value={5} label="Technologies"   delay={1.0} />
+            <StatCard value={5}  label="Technologies"     delay={1.0} />
             <div className="w-px h-8 bg-white/10" />
-            <StatCard value={2} label="Certifications" delay={1.2} />
+            <StatCard value={2}  label="Certifications"   delay={1.2} />
           </motion.div>
         </motion.div>
 
-        {/* ══ RIGHT — photo ══ */}
+        {/* ══════════════ RIGHT — photo ══════════════ */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
@@ -330,9 +300,19 @@ const Hero = () => {
           className="flex-shrink-0 relative flex items-center justify-center w-[340px] h-[340px] md:w-[420px] md:h-[420px]"
         >
 
-          {/* Orbiting tech rings */}
-          <OrbitRing radius={200} duration={28} techs={TECHS.slice(0, 4)} clockwise={true}  />
-          <OrbitRing radius={170} duration={20} techs={TECHS.slice(4)}    clockwise={false} />
+          {/* Outer slow-rotate ring with tech labels */}
+          <OrbitRing
+            radius={200}
+            duration={28}
+            techs={TECHS.slice(0, 4)}
+            clockwise={true}
+          />
+          <OrbitRing
+            radius={170}
+            duration={20}
+            techs={TECHS.slice(4)}
+            clockwise={false}
+          />
 
           {/* Pulsing aura rings */}
           {[1, 2, 3].map((n) => (
@@ -341,22 +321,13 @@ const Hero = () => {
               className="absolute rounded-full border border-cyan-400/10 pointer-events-none"
               style={{ width: 280 + n * 40, height: 280 + n * 40 }}
               animate={{ scale: [1, 1.06, 1], opacity: [0.3, 0.08, 0.3] }}
-              transition={{
-                duration: 2.5 + n * 0.7,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: n * 0.4,
-              }}
+              transition={{ duration: 2.5 + n * 0.7, repeat: Infinity, ease: 'easeInOut', delay: n * 0.4 }}
             />
           ))}
 
           {/* Mouse-parallax 3D tilt card */}
           <motion.div
-            style={{
-              rotateX: imgRotateX,
-              rotateY: imgRotateY,
-              transformStyle: 'preserve-3d',
-            }}
+            style={{ rotateX: imgRotateX, rotateY: imgRotateY, transformStyle: 'preserve-3d' }}
             className="relative w-64 h-72 md:w-72 md:h-80"
           >
             {/* Glow behind photo */}
@@ -378,12 +349,12 @@ const Hero = () => {
               alt={DATA.name}
               className="w-full h-full object-cover object-top rounded-3xl relative z-10 select-none"
               style={{
-                maskImage:       'linear-gradient(to bottom, black 75%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+                maskImage:        'linear-gradient(to bottom, black 75%, transparent 100%)',
+                WebkitMaskImage:  'linear-gradient(to bottom, black 75%, transparent 100%)',
               }}
             />
 
-            {/* Animated border */}
+            {/* Animated cyan border */}
             <motion.div
               animate={{
                 borderColor: [
@@ -396,7 +367,7 @@ const Hero = () => {
               className="absolute inset-0 rounded-3xl border-2 z-20 pointer-events-none"
             />
 
-            {/* Floating role badge */}
+            {/* Floating name badge at bottom */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
